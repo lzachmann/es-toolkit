@@ -43,5 +43,4 @@ RUN cd ~ \
 RUN R -e "devtools::install_github('rstudio/blogdown')"
 RUN R -e "devtools::install_github('adletaw/captioner')"
 RUN R -e "devtools::install_github('ropensci/plotly')"
-RUN R -e "install.packages('rstanarm')"
 
