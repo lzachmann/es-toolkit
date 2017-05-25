@@ -33,6 +33,9 @@ RUN pip install earthengine-api
 # Upgrade pyasn1 to resolve version conflict
 RUN pip install pyasn1 --upgrade
 
+# Install Pandas
+RUN apt-get -y install python-pandas
+
 # Hugo installation
 RUN cd ~ \
     && wget https://github.com/spf13/hugo/releases/download/v0.20.7/hugo_0.20.7_Linux-64bit.deb \
@@ -43,4 +46,4 @@ RUN cd ~ \
 RUN R -e "devtools::install_github('rstudio/blogdown')"
 RUN R -e "devtools::install_github('adletaw/captioner')"
 RUN R -e "devtools::install_github('ropensci/plotly')"
-
+RUN R -e "devtools::install_github('haozhu233/kableExtra')"
