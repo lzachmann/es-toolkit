@@ -48,5 +48,5 @@ RUN cd ~ \
 RUN R -e "devtools::install_github('rstudio/blogdown')"
 RUN R -e "devtools::install_github('adletaw/captioner')"
 RUN R -e "devtools::install_github('ropensci/plotly')"
-RUN R -e "devtools::install_github('haozhu233/kableExtra')"
-RUN R -e "devtools::install_github('tidyverse/ggplot2')"
+RUN R -e "devtools::install_github('haozhu233/kableExtra', ref='f200ce56bafab4dcfaaada294cd9d1b9599d2c68')"
+
