@@ -16,7 +16,9 @@ RUN mkdir -p $HOME/.R/ \
 RUN install2.r --repo http://cloud.r-project.org/ --deps TRUE --error \
     rstan \
     leaflet \
-    lme4
+    lme4 \
+    ggthemes \
+    showtext
 
 # Text editor
 RUN apt-get install nano
@@ -47,3 +49,4 @@ RUN R -e "devtools::install_github('rstudio/blogdown')"
 RUN R -e "devtools::install_github('adletaw/captioner')"
 RUN R -e "devtools::install_github('ropensci/plotly')"
 RUN R -e "devtools::install_github('haozhu233/kableExtra')"
+RUN R -e "devtools::install_github('tidyverse/ggplot2')"
