@@ -18,7 +18,8 @@ RUN install2.r --repo http://cloud.r-project.org/ --deps TRUE --error \
     leaflet \
     lme4 \
     ggthemes \
-    showtext
+    showtext \
+    tidyjson
 
 # Text editor
 RUN apt-get install nano
@@ -49,4 +50,3 @@ RUN R -e "devtools::install_github('rstudio/blogdown')"
 RUN R -e "devtools::install_github('adletaw/captioner')"
 RUN R -e "devtools::install_github('ropensci/plotly')"
 RUN R -e "devtools::install_github('haozhu233/kableExtra', ref='f200ce56bafab4dcfaaada294cd9d1b9599d2c68')"
-
