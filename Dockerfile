@@ -1,4 +1,4 @@
-FROM rocker/geospatial:3.4.0
+FROM rocker/geospatial:3.4.1
 
 # Toolchain
 RUN apt-get update \
