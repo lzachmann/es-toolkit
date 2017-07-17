@@ -45,8 +45,19 @@ RUN cd ~ \
     && dpkg -i hugo*.deb \
     && rm hugo*.deb
 
+# ImageMagick
+RUN wget https://www.imagemagick.org/download/ImageMagick.tar.gz -P /usr/local \
+    && tar xvzf /usr/local/ImageMagick.tar.gz -C /usr/local/bin \
+    && rm /usr/local/ImageMagick.tar.gz \
+    && cd /usr/local/bin/ImageMagick-7.0.6-1 \
+    && ./configure \
+    && make \
+    && make install \
+    && ldconfig /usr/local/lib
+
 # Install additional R packages
-RUN R -e "devtools::install_github('rstudio/blogdown')"
-RUN R -e "devtools::install_github('adletaw/captioner')"
-RUN R -e "devtools::install_github('ropensci/plotly')"
-RUN R -e "devtools::install_github('haozhu233/kableExtra', ref='f200ce56bafab4dcfaaada294cd9d1b9599d2c68')"
+RUN R -e "devtools::install_github('rstudio/blogdown')" \
+    && R -e "devtools::install_github('adletaw/captioner')" \
+    && R -e "devtools::install_github('ropensci/plotly')" \
+    && R -e "devtools::install_github('haozhu233/kableExtra', ref='f200ce56bafab4dcfaaada294cd9d1b9599d2c68')" \
+    && R -e "devtools::install_github('dgrtwo/gganimate')"
