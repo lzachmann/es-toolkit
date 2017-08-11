@@ -15,8 +15,6 @@ RUN mkdir -p $HOME/.R/ \
 # Installation
 RUN install2.r --repo http://cloud.r-project.org/ --deps TRUE --error \
     rstan \
-    leaflet \
-    leaflet.extras \
     lme4 \
     ggthemes \
     showtext \
@@ -71,4 +69,6 @@ RUN R -e "devtools::install_github('rstudio/blogdown')" \
     && R -e "devtools::install_github('ropensci/plotly')" \
     && R -e "devtools::install_github('haozhu233/kableExtra', ref='f200ce56bafab4dcfaaada294cd9d1b9599d2c68')" \
     && R -e "devtools::install_github('dgrtwo/gganimate')" \
+    && R -e "devtools::install_github('rstudio/leaflet')" \
+    && R -e "devtools::install_github('bhaskarvk/leaflet.extras')" \
     && R -e "install.packages('rjags', configure.args='--with-jags-include=/usr/local/include/JAGS --with-jags-lib=/usr/local/lib/JAGS --with-jags-modules=/usr/local/lib/JAGS/modules')"
