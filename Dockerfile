@@ -16,6 +16,7 @@ RUN mkdir -p $HOME/.R/ \
 RUN install2.r --repo http://cloud.r-project.org/ --deps TRUE --error \
     rstan \
     leaflet \
+    leaflet.extras \
     lme4 \
     ggthemes \
     showtext \
