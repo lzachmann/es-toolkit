@@ -22,7 +22,7 @@ RUN wget http://ftp.debian.org/debian/pool/main/j/jags/jags_4.3.0.orig.tar.gz -P
     && make \
     && make install
 
-# Additional R packages
+# R packages
 RUN R -e "devtools::install_github('lme4/lme4', dependencies=TRUE)" \
     && R -e "devtools::install_github('jrnold/ggthemes')" \
     && R -e "devtools::install_github('yixuan/showtext')" \
